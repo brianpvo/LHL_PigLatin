@@ -14,31 +14,34 @@
 {
     self = [super init];
     if (self) {
-        _consonants = [NSCharacterSet characterSetWithCharactersInString:@"bcdfghjklmnpqrstvwxyz"];
+        _punctuations = [NSCharacterSet characterSetWithCharactersInString:@".,?!':;-"];
         _vowels = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
     }
     return self;
 }
 
 -(NSString *) stringByPigLatinization:(NSArray *)words {
+    NSString *fullString = @"";
     NSString* pigLatin = @"";
     
     for (NSString* word in words) {
-        NSString* firstCharacter = [word substringWithRange:NSMakeRange(0, 1)];
-        NSString *restCharacter = [word substringWithRange:NSMakeRange(1, [word length] - 1)];
         
-        _vowels = [_vowels invertedSet];
-        NSRange range1 = [firstCharacter rangeOfCharacterFromSet:_vowels];
-        if (range1.location == NSNotFound) {
-            pigLatin = [firstCharacter stringByAppendingString:restCharacter];
-            pigLatin = [pigLatin stringByAppendingString:@"way"];
+        NSRange firstVowel = [word rangeOfCharacterFromSet:_vowels];
+        
+//        NSLog(@"range is : %@", NSStringFromRange(firstVowel));
+        
+        if (firstVowel.location == 0) {
+            pigLatin = [word stringByAppendingString:@"way"];
+        } else {
+            NSString *restWord = [word substringToIndex:firstVowel.location];
+            pigLatin = [word substringFromIndex:firstVowel.location];
+            pigLatin = [pigLatin stringByAppendingString:restWord];
+            pigLatin = [pigLatin stringByAppendingString:@"ay"];
         }
-        
-        _consonants = [_consonants invertedSet];
-        NSRange range2 = [firstCharacter rangeOfCharacterFromSet:_consonants];
-        
+        fullString = [fullString stringByAppendingString:pigLatin];
+        fullString = [fullString stringByAppendingString:@" "];
     }
-    return pigLatin;
+    return fullString;
 }
 
 @end

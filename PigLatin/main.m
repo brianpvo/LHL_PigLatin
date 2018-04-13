@@ -15,12 +15,15 @@ int main(int argc, const char * argv[]) {
         InputHandler *inputHandler = [InputHandler new];
         PigLatinTranslator *piglatinTranslator = [PigLatinTranslator new];
         
-        NSString *inputString = [inputHandler parse];
-        NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
-        
-        NSString *pigLatin = [piglatinTranslator stringByPigLatinization:commandWords];
-        
-        NSLog(@"Piglatin Translator: %@", pigLatin);
+        while(1) {
+            
+            NSString *inputString = [inputHandler parse];
+            NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
+            
+            NSString *pigLatin = [piglatinTranslator stringByPigLatinization:commandWords];
+            
+            NSLog(@"Piglatin Translator: %@", pigLatin);
+        }
         
     }
     return 0;

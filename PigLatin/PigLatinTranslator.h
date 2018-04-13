@@ -10,7 +10,7 @@
 
 @interface PigLatinTranslator : NSObject
 
-@property (nonatomic, strong) NSCharacterSet *consonants;
+@property (nonatomic, strong) NSCharacterSet *punctuations;
 @property (nonatomic, strong) NSCharacterSet *vowels;
 
 -(NSString *) stringByPigLatinization:(NSArray *)words;
