@@ -1,34 +1,27 @@
 //
-//  PigLatinTranslator.m
+//  NSString+PigLatin.m
 //  PigLatin
 //
 //  Created by Brian Vo on 2018-04-13.
 //  Copyright © 2018 Brian Vo. All rights reserved.
 //
 
-#import "PigLatinTranslator.h"
+#import "NSString+PigLatin.h"
 
-@implementation PigLatinTranslator
+@implementation NSString (PigLatin)
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _punctuations = [NSCharacterSet characterSetWithCharactersInString:@".,?!':;-"];
-        _vowels = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
-    }
-    return self;
-}
-
--(NSString *) stringByPigLatinization:(NSArray *)words {
++(NSString *) stringByPigLatinization:(NSArray *)words {
+    NSCharacterSet *punctuations = [NSCharacterSet characterSetWithCharactersInString:@".,?!':;-"];
+    NSCharacterSet *vowels = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
+    
     NSString *fullString = @"";
     NSString* pigLatin = @"";
     
     for (NSString* word in words) {
         
-        NSRange firstVowel = [word rangeOfCharacterFromSet:_vowels];
+        NSRange firstVowel = [word rangeOfCharacterFromSet:vowels];
         
-//        NSLog(@"range is : %@", NSStringFromRange(firstVowel));
+        //        NSLog(@"range is : %@", NSStringFromRange(firstVowel));
         
         if (firstVowel.location == 0) {
             pigLatin = [word stringByAppendingString:@"way"];
@@ -43,5 +36,6 @@
     }
     return fullString;
 }
+
 
 @end

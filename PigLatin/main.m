@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
-#import "PigLatinTranslator.h"
+#import "NSString+PigLatin.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         InputHandler *inputHandler = [InputHandler new];
-        PigLatinTranslator *piglatinTranslator = [PigLatinTranslator new];
+        // *piglatinTranslator = [PigLatinTranslator new];
         
         while(1) {
             
             NSString *inputString = [inputHandler parse];
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
             
-            NSString *pigLatin = [piglatinTranslator stringByPigLatinization:commandWords];
+            NSString *pigLatin = [NSString stringByPigLatinization:commandWords];
             
             NSLog(@"Piglatin Translator: %@", pigLatin);
         }

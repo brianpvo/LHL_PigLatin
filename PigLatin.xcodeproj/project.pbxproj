@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1059FA20818458001EB299 /* NSString+PigLatin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1059F920818458001EB299 /* NSString+PigLatin.m */; };
 		7AF83B79208154D7005B3873 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF83B78208154D7005B3873 /* main.m */; };
-		7AF83B81208157FB005B3873 /* PigLatinTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF83B80208157FB005B3873 /* PigLatinTranslator.m */; };
 		7AF83B84208158FF005B3873 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF83B83208158FF005B3873 /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
@@ -25,10 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A1059F820818458001EB299 /* NSString+PigLatin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PigLatin.h"; sourceTree = "<group>"; };
+		7A1059F920818458001EB299 /* NSString+PigLatin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PigLatin.m"; sourceTree = "<group>"; };
 		7AF83B75208154D7005B3873 /* PigLatin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PigLatin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF83B78208154D7005B3873 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7AF83B7F208157FB005B3873 /* PigLatinTranslator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PigLatinTranslator.h; sourceTree = "<group>"; };
-		7AF83B80208157FB005B3873 /* PigLatinTranslator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PigLatinTranslator.m; sourceTree = "<group>"; };
 		7AF83B82208158FF005B3873 /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
 		7AF83B83208158FF005B3873 /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,10 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				7AF83B78208154D7005B3873 /* main.m */,
-				7AF83B7F208157FB005B3873 /* PigLatinTranslator.h */,
-				7AF83B80208157FB005B3873 /* PigLatinTranslator.m */,
 				7AF83B82208158FF005B3873 /* InputHandler.h */,
 				7AF83B83208158FF005B3873 /* InputHandler.m */,
+				7A1059F820818458001EB299 /* NSString+PigLatin.h */,
+				7A1059F920818458001EB299 /* NSString+PigLatin.m */,
 			);
 			path = PigLatin;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF83B79208154D7005B3873 /* main.m in Sources */,
+				7A1059FA20818458001EB299 /* NSString+PigLatin.m in Sources */,
 				7AF83B84208158FF005B3873 /* InputHandler.m in Sources */,
-				7AF83B81208157FB005B3873 /* PigLatinTranslator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
